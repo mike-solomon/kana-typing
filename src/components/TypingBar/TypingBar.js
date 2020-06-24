@@ -2,6 +2,8 @@ import "./TypingBar.scss";
 
 import React, { useState } from "react";
 
+import { Input } from "@fluentui/react-northstar";
+
 const TypingBar = () => {
   const [count, setCount] = useState(0);
   const [value, setValue] = useState("");
@@ -23,7 +25,7 @@ const TypingBar = () => {
         <p>You entered {count} amount of characters.</p>
         <p>You entered {value} characters.</p>
       </div>
-      <input type='text' value={value} onChange={recalculate} />
+      <Input fluid value={value} onChange={recalculate} />
     </div>
   );
 };
