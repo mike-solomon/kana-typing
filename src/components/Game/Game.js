@@ -12,7 +12,15 @@ function Game() {
     const max = Object.keys(hiraganaToValidRomajiMap).length - 1;
     const rand = Math.floor(Math.random() * (max - min + 1) + min);
 
-    return Object.keys(hiraganaToValidRomajiMap)[rand];
+    const displayedKana = Object.keys(hiraganaToValidRomajiMap)[rand];
+    const possibleAnswers = hiraganaToValidRomajiMap[displayedKana];
+
+    const kana = {
+      displayedKana,
+      possibleAnswers,
+    };
+
+    return kana;
   };
 
   const [value, setValue] = useState("");
@@ -21,8 +29,8 @@ function Game() {
   const onUserInputChange = (event) => {
     setValue(event.target.value);
 
-    if (event.target.value === "heyo") {
-      console.log("winnar");
+    if (kana.possibleAnswers.includes(event.target.value)) {
+      console.log("OMG THIS WORKED?!!");
       setValue("");
       setKana(getRandomKana());
     }
@@ -30,7 +38,7 @@ function Game() {
 
   return (
     <div className='Game'>
-      <KanaDisplay content={kana} />
+      <KanaDisplay content={kana.displayedKana} />
       <TypingBar value={value} onChange={onUserInputChange} />
     </div>
   );
