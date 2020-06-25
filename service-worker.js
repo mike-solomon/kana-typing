@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kana-typing/precache-manifest.bef8e914db2596ef6d878a7a49bdef8c.js"
+  "/kana-typing/precache-manifest.3e8b2b4c01e4c85d67ef584353c6db7d.js"
 );
 
 self.addEventListener('message', (event) => {
