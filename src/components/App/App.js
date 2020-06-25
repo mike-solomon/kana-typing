@@ -1,8 +1,7 @@
 import "./App.scss";
 
-import KanaDisplay from "../KanaDisplay/KanaDisplay";
+import Game from "../Game/Game";
 import React from "react";
-import TypingBar from "../TypingBar/TypingBar";
 
 function App() {
   return (
@@ -10,8 +9,7 @@ function App() {
       <header className='App-header'>
         <p>Kana Typing</p>
       </header>
-      <KanaDisplay />
-      <TypingBar />
+      <Game />
     </div>
   );
 }
