@@ -21,11 +21,11 @@ const TypingBar = () => {
 
   return (
     <div className='TypingBar'>
+      <Input fluid value={value} onChange={recalculate} />
       <div className='RandomInfo'>
         <p>You entered {count} amount of characters.</p>
         <p>You entered {value} characters.</p>
       </div>
-      <Input fluid value={value} onChange={recalculate} />
     </div>
   );
 };
