@@ -3,3 +3,13 @@
   width: 50%;
   padding-top: 1em;
 }
+
+.wrong {
+  border-color: red;
+  box-shadow: 0 0 0 0.2rem red;
+}
+
+.wrong:focus {
+  border-color: red;
+  box-shadow: 0 0 0 0.2rem red;
+}
