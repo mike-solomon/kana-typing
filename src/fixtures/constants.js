@@ -90,7 +90,7 @@ const dyaRow = {
   ぢょ: ["dyo"],
 };
 
-const hiraganaToValidRomajiMap = {
+export const hiraganaToValidRomajiMap = {
   ...aRow,
   ...kaRow,
   ...gaRow,
@@ -104,8 +104,4 @@ const hiraganaToValidRomajiMap = {
   ...daRow,
   ...chaRow,
   ...dyaRow,
-};
-
-module.exports = {
-  hiraganaToValidRomajiMap,
 };
