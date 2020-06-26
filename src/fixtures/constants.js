@@ -84,11 +84,12 @@ const chaRow = {
   ちょ: ["cho"],
 };
 
-const dyaRow = {
-  ぢゃ: ["dya"],
-  ぢゅ: ["dyu"],
-  ぢょ: ["dyo"],
-};
+// Unsure if this should be in or not...
+// const dyaRow = {
+//   ぢゃ: ["dya"],
+//   ぢゅ: ["dyu"],
+//   ぢょ: ["dyo"],
+// };
 
 export const hiraganaToValidRomajiMap = {
   ...aRow,
@@ -103,5 +104,4 @@ export const hiraganaToValidRomajiMap = {
   ...taRow,
   ...daRow,
   ...chaRow,
-  ...dyaRow,
 };
