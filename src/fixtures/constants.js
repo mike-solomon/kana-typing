@@ -65,7 +65,7 @@ const jaRow = {
 const taRow = {
   た: ["ta"],
   ち: ["chi"],
-  つ: ["stu"],
+  つ: ["tsu"],
   て: ["te"],
   と: ["to"],
 };
