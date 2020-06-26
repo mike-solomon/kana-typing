@@ -47,7 +47,7 @@ function Game() {
 
   const [value, setValue] = useState("");
   const [kana, setKana] = useState(getRandomKana());
-  const [textInputClass, setTextInputClass] = useState("form-control");
+  const [isWrong, setIsWrong] = useState(false);
 
   const onUserInputChange = (event) => {
     setValue(event.target.value);
@@ -56,21 +56,17 @@ function Game() {
       console.log("OMG THIS WORKED?!!");
       setValue("");
       setKana(getRandomKana());
-      setTextInputClass("form-control");
+      setIsWrong(false);
     } else if (shouldNotifyUserOfWrongAnswer(event.target.value)) {
       console.log("wrong!");
-      setTextInputClass("wrong form-control ");
+      setIsWrong(true);
     }
   };
 
   return (
     <div className='Game'>
       <KanaDisplay content={kana.displayedKana} />
-      <TypingBar
-        class={textInputClass}
-        value={value}
-        onChange={onUserInputChange}
-      />
+      <TypingBar isWrong={isWrong} value={value} onChange={onUserInputChange} />
     </div>
   );
 }

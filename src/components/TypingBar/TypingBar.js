@@ -2,20 +2,22 @@ import "./TypingBar.scss";
 
 import React from "react";
 
-const TypingBar = (props) => {
+const TypingBar = ({ isWrong, value, onChange }) => {
+  const className = isWrong ? "wrong form-control" : "form-control";
+
   return (
     <div className='TypingBar'>
       <input
         type='text'
-        className={props.class}
+        className={className}
         autoFocus
-        value={props.value}
-        onChange={props.onChange}
+        value={value}
+        onChange={onChange}
       />
       <br />
       <div className='alert alert-primary'>
-        You entered {props.value.length} amount of characters. <br />
-        You entered {props.value} characters.
+        You entered {value.length} amount of characters. <br />
+        You entered {value} characters.
       </div>
     </div>
   );
