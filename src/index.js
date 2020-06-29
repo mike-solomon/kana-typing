@@ -1,4 +1,4 @@
-// import "./index.scss";
+import "./index.scss";
 
 import App from "./components/App/App";
 import React from "react";

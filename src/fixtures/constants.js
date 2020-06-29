@@ -105,3 +105,18 @@ export const hiraganaToValidRomajiMap = {
   ...daRow,
   ...chaRow,
 };
+
+export const hiraganaRows = [
+  aRow,
+  kaRow,
+  gaRow,
+  kyaRow,
+  gyaRow,
+  saRow,
+  zaRow,
+  shaRow,
+  jaRow,
+  taRow,
+  daRow,
+  chaRow,
+];
