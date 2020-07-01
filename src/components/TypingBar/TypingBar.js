@@ -6,16 +6,15 @@ const TypingBar = ({ isWrong, value, onChange }) => {
   const className = isWrong ? "wrong form-control" : "form-control";
 
   return (
-    <div className='TypingBar'>
+    <div className="TypingBar">
       <input
-        type='text'
+        type="text"
         className={className}
-        autoFocus
         value={value}
         onChange={onChange}
       />
       <br />
-      <div className='alert alert-primary'>
+      <div className="alert alert-primary">
         You entered {value.length} amount of characters. <br />
         You entered {value} characters.
       </div>

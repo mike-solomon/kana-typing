@@ -22,7 +22,7 @@ const initialState = {
   ちゃrow: true,
 };
 
-const KanaSelector = (props) => {
+const KanaSelector = () => {
   console.log(`hiraganaRows: ${JSON.stringify(hiraganaRows)}`);
 
   const [state, dispatch] = useReducer(checkboxReducer, initialState);
@@ -59,7 +59,7 @@ const KanaSelector = (props) => {
   });
 
   return (
-    <Table striped bordered hover size='sm'>
+    <Table striped bordered hover size="sm">
       <tbody>{componentsToRender}</tbody>
     </Table>
   );

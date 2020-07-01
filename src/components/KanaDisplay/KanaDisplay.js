@@ -7,7 +7,7 @@ const KanaDisplay = (props) => {
   console.log(`props: ${JSON.stringify(props)}`);
 
   return (
-    <div className='KanaDisplay'>
+    <div className="KanaDisplay">
       <Jumbotron>
         <h1>{props.content}</h1>
       </Jumbotron>

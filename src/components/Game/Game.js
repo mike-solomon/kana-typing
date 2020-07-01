@@ -64,7 +64,7 @@ function Game() {
   };
 
   return (
-    <div className='Game'>
+    <div className="Game">
       <KanaDisplay content={kana.displayedKana} />
       <TypingBar isWrong={isWrong} value={value} onChange={onUserInputChange} />
     </div>
