@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dd55d26d93617f6c75e89aa9b1e4c4a8",
+    "revision": "0d7d9b0d0e3c9ed002c8dba7ac6b6c0c",
     "url": "/kana-typing/index.html"
   },
   {
-    "revision": "1eb51afb3db5026f5dbf",
+    "revision": "ec7c7361de36b58aed52",
     "url": "/kana-typing/static/css/main.0e5834e3.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kana-typing/static/js/2.43c4ba50.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1eb51afb3db5026f5dbf",
-    "url": "/kana-typing/static/js/main.5be205b8.chunk.js"
+    "revision": "ec7c7361de36b58aed52",
+    "url": "/kana-typing/static/js/main.b830f6af.chunk.js"
   },
   {
     "revision": "d611fed3592f044c8cec",

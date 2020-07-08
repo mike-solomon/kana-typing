@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kana-typing/static/css/main.0e5834e3.chunk.css",
-    "main.js": "/kana-typing/static/js/main.5be205b8.chunk.js",
-    "main.js.map": "/kana-typing/static/js/main.5be205b8.chunk.js.map",
+    "main.js": "/kana-typing/static/js/main.b830f6af.chunk.js",
+    "main.js.map": "/kana-typing/static/js/main.b830f6af.chunk.js.map",
     "runtime-main.js": "/kana-typing/static/js/runtime-main.ec722218.js",
     "runtime-main.js.map": "/kana-typing/static/js/runtime-main.ec722218.js.map",
     "static/js/2.43c4ba50.chunk.js": "/kana-typing/static/js/2.43c4ba50.chunk.js",
     "static/js/2.43c4ba50.chunk.js.map": "/kana-typing/static/js/2.43c4ba50.chunk.js.map",
     "index.html": "/kana-typing/index.html",
-    "precache-manifest.33c0db61bbe0325d7364f7ca8da493b2.js": "/kana-typing/precache-manifest.33c0db61bbe0325d7364f7ca8da493b2.js",
+    "precache-manifest.e231f00f56386c3b0db2e3ce578746cf.js": "/kana-typing/precache-manifest.e231f00f56386c3b0db2e3ce578746cf.js",
     "service-worker.js": "/kana-typing/service-worker.js",
     "static/css/main.0e5834e3.chunk.css.map": "/kana-typing/static/css/main.0e5834e3.chunk.css.map",
     "static/js/2.43c4ba50.chunk.js.LICENSE.txt": "/kana-typing/static/js/2.43c4ba50.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ec722218.js",
     "static/js/2.43c4ba50.chunk.js",
     "static/css/main.0e5834e3.chunk.css",
-    "static/js/main.5be205b8.chunk.js"
+    "static/js/main.b830f6af.chunk.js"
   ]
 }
