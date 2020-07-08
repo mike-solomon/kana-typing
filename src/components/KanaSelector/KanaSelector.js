@@ -22,14 +22,10 @@ const initialState = {
   ちゃrow: true,
 };
 
-const KanaSelector = () => {
-  console.log(`hiraganaRows: ${JSON.stringify(hiraganaRows)}`);
-
-  const [state, dispatch] = useReducer(checkboxReducer, initialState);
-
-  const componentsToRender = hiraganaRows.map((hiraganaRow) => {
-    console.log(`hiraganaRow: ${JSON.stringify(hiraganaRow)}`);
-    console.log(`rowKey: ${Object.keys(hiraganaRow)[0] + "row"}`);
+const getKanaRows = (state, dispatch) => {
+  const kanaRows = hiraganaRows.map((hiraganaRow) => {
+    // console.log(`hiraganaRow: ${JSON.stringify(hiraganaRow)}`);
+    // console.log(`rowKey: ${Object.keys(hiraganaRow)[0] + "row"}`);
 
     // When iterating over objects in React, React needs a unique
     // "key" to help identify which items have changed, are added,
@@ -43,13 +39,11 @@ const KanaSelector = () => {
     return (
       <KanaSelectorRow
         key={kanaRowId}
-        kanaRowId={kanaRowId}
         onClick={(e) => {
           console.log(
             `text I clicked on MEOW: ${JSON.stringify(e.target.textContent)}`
           );
           console.log(`kanaRowId: ${kanaRowId}`);
-          console.log("row clicked!!");
           dispatch({ type: "ROW_CLICKED", key: kanaRowId });
         }}
         checked={state[kanaRowId]}
@@ -58,9 +52,15 @@ const KanaSelector = () => {
     );
   });
 
+  return kanaRows;
+};
+
+const KanaSelector = () => {
+  const [state, dispatch] = useReducer(checkboxReducer, initialState);
+
   return (
     <Table striped bordered hover size="sm">
-      <tbody>{componentsToRender}</tbody>
+      <tbody>{getKanaRows(state, dispatch)}</tbody>
     </Table>
   );
 };

@@ -6,69 +6,73 @@ import KanaDisplay from "../KanaDisplay/KanaDisplay";
 import TypingBar from "../TypingBar/TypingBar";
 import { hiraganaToValidRomajiMap } from "../../fixtures/constants";
 
-function Game() {
-  const getRandomKana = () => {
-    const min = 0;
-    const max = Object.keys(hiraganaToValidRomajiMap).length - 1;
-    const rand = Math.floor(Math.random() * (max - min + 1) + min);
+const getRandomKanaWithAnswers = () => {
+  const min = 0;
+  const max = Object.keys(hiraganaToValidRomajiMap).length - 1;
+  const rand = Math.floor(Math.random() * (max - min + 1) + min);
 
-    const displayedKana = Object.keys(hiraganaToValidRomajiMap)[rand];
-    const possibleAnswers = hiraganaToValidRomajiMap[displayedKana];
+  const kana = Object.keys(hiraganaToValidRomajiMap)[rand];
+  const possibleAnswers = hiraganaToValidRomajiMap[kana];
 
-    const kana = {
-      displayedKana,
-      possibleAnswers,
-    };
-
-    return kana;
+  const kanaWithAnswers = {
+    kana,
+    possibleAnswers,
   };
 
-  const shouldNotifyUserOfWrongAnswer = (userInput) => {
-    let shouldNotifyUser = false;
+  return kanaWithAnswers;
+};
 
-    const longestPossibleAnswer = kana.possibleAnswers.reduce(function (a, b) {
-      return a.length >= b.length ? a : b;
-    });
+const shouldNotifyUserOfWrongAnswer = (requestedKana, userInput) => {
+  let shouldNotifyUser = false;
 
-    console.log(`userInput: ${userInput}`);
-    console.log(`userInput length: ${userInput.length}`);
-    console.log(`kana: ${longestPossibleAnswer}`);
-    console.log(`kana length: ${longestPossibleAnswer.length}`);
+  const longestPossibleAnswer = requestedKana.possibleAnswers.reduce(function (
+    a,
+    b
+  ) {
+    return a.length >= b.length ? a : b;
+  });
 
-    if (
-      userInput.includes(" ") ||
-      userInput.length >= longestPossibleAnswer.length
-    ) {
-      shouldNotifyUser = true;
-    }
+  if (
+    userInput.includes(" ") ||
+    userInput.length >= longestPossibleAnswer.length
+  ) {
+    shouldNotifyUser = true;
+  }
 
-    return shouldNotifyUser;
-  };
+  return shouldNotifyUser;
+};
 
-  const [value, setValue] = useState("");
-  const [kana, setKana] = useState(getRandomKana());
+const Game = () => {
+  const [userInput, setUserInput] = useState("");
+  const [requestedKana, setRequestedKana] = useState(
+    getRandomKanaWithAnswers()
+  );
   const [isWrong, setIsWrong] = useState(false);
 
   const onUserInputChange = (event) => {
-    setValue(event.target.value);
+    setUserInput(event.target.value);
 
-    if (kana.possibleAnswers.includes(event.target.value)) {
-      console.log("OMG THIS WORKED?!!");
-      setValue("");
-      setKana(getRandomKana());
+    if (requestedKana.possibleAnswers.includes(event.target.value)) {
+      setUserInput("");
+      setRequestedKana(getRandomKanaWithAnswers());
       setIsWrong(false);
-    } else if (shouldNotifyUserOfWrongAnswer(event.target.value)) {
-      console.log("wrong!");
+    } else if (
+      shouldNotifyUserOfWrongAnswer(requestedKana, event.target.value)
+    ) {
       setIsWrong(true);
     }
   };
 
   return (
     <div className="Game">
-      <KanaDisplay content={kana.displayedKana} />
-      <TypingBar isWrong={isWrong} value={value} onChange={onUserInputChange} />
+      <KanaDisplay kanaToDisplay={requestedKana.kana} />
+      <TypingBar
+        isWrong={isWrong}
+        userInput={userInput}
+        onChange={onUserInputChange}
+      />
     </div>
   );
-}
+};
 
 export default Game;

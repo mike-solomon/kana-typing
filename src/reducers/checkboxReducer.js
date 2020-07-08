@@ -1,6 +1,5 @@
 const checkboxReducer = (state, action) => {
   console.log(`action: ${JSON.stringify(action)}`);
-  console.log(`state: ${JSON.stringify(state)}`);
 
   switch (action.type) {
     case "ROW_CLICKED":

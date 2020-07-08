@@ -2,7 +2,7 @@ import "./TypingBar.scss";
 
 import React from "react";
 
-const TypingBar = ({ isWrong, value, onChange }) => {
+const TypingBar = ({ isWrong, userInput, onChange }) => {
   const className = isWrong ? "wrong form-control" : "form-control";
 
   return (
@@ -10,13 +10,13 @@ const TypingBar = ({ isWrong, value, onChange }) => {
       <input
         type="text"
         className={className}
-        value={value}
+        value={userInput}
         onChange={onChange}
       />
       <br />
       <div className="alert alert-primary">
-        You entered {value.length} amount of characters. <br />
-        You entered {value} characters.
+        You entered {userInput.length} amount of characters. <br />
+        You entered {userInput} characters.
       </div>
     </div>
   );

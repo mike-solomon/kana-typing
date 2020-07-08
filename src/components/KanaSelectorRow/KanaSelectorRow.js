@@ -4,24 +4,23 @@ import KanaCell from "../KanaCell/KanaCell";
 import KanaSelectorCheckbox from "../KanaSelectorCheckbox/KanaSelectorCheckbox";
 import React from "react";
 
-const KanaSelectorRow = (props) => {
-  console.log(`kanaRow: ${JSON.stringify(props.kanaRow)}`);
+const getKanaCellsForKanaRow = (kanaRow) => {
+  let kanaCells = [];
 
-  let componentsToRender = [];
-
-  for (const kana in props.kanaRow) {
-    componentsToRender.push(
-      <KanaCell key={kana} kana={kana} kanaAnswers={props.kanaRow[kana]} />
+  for (const kana in kanaRow) {
+    kanaCells.push(
+      <KanaCell key={kana} kana={kana} kanaAnswers={kanaRow[kana]} />
     );
   }
 
+  return kanaCells;
+};
+
+const KanaSelectorRow = ({ kanaRow, onClick, checked }) => {
   return (
-    <tr onClick={props.onClick}>
-      <KanaSelectorCheckbox
-        kanaRowId={props.kanaRowId}
-        checked={props.checked}
-      />
-      {componentsToRender}
+    <tr onClick={onClick}>
+      <KanaSelectorCheckbox checked={checked} />
+      {getKanaCellsForKanaRow(kanaRow)}
     </tr>
   );
 };
